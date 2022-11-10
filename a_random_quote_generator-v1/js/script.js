@@ -13,7 +13,7 @@ project 1 - A Random Quote Generator
 
 // The quotes that will be used by the random quote geneartor are listed in this seciton. 
 let quotes = [
-  {quote: 'It does not do to dwell on dreams and forget to live' , source: 'Albus Dumbledore', year: '', citation: ''},
+  {quote: 'It does not do to dwell on dreams and forget to live', source: 'Albus Dumbledore', year: '', citation: ''},
   {quote: 'Fear of a name incrases fear of the thing itself', source: 'Albus Dumbledore', year: '', citation: ''},
   {quote: 'Of all the trees we couldve hit, we had to get one that hits back.', source: 'Ron Weasley', year: '', citation: ''},
   {quote: 'When in doubt, go to the library.', source: 'Ron Weasley', year: '1987', citation: ''},
@@ -26,7 +26,7 @@ let quotes = [
 
 // The getRandomQuote function pulls in the defined array, and assigns a random number based on the length of the array.
 function getRandomQuote(array) {
-  let randomNumber = array[Math.floor(Math.random() * array.length) + 1];
+  let randomNumber = array[Math.floor(Math.random() * array.length)];
   return randomNumber;
 }
 
@@ -37,34 +37,36 @@ function getRandomQuote(array) {
  * `printQuote` function
 ***/
 
+
+function printQuote() {
 //  randomQuote variable uses the getRandomQuote function and assign it to the new variable. 
 // the printQuote variable takes the randomQuote variable and wraps it in the necesary HTML
 let randomQuote = getRandomQuote(quotes);
-let printQuote = `<p class="quotes"> ${randomQuote.quote} </p> <p class="source"> ${randomQuote.source}`;
+let message = `<p class = 'quotes'> ${randomQuote.quote} </p> <p class = 'source'> ${randomQuote.source}`;
 
 // these conditional statements were created to check for the year and citation properties, and if the object contains them it adds it to the printQuote variable 
 if (randomQuote.year !== "") {
-  printQuote = printQuote + `<span> ${randomQuote.year} </span>`;
+  message = message + `<span> ${randomQuote.year} </span>`;
 } 
 
 if (randomQuote.citation !== "") {
-  printQuote = printQuote + `<span> ${randomQuote.citation} </span>`;
+  message = message + `<span> ${randomQuote.citation} </span>`;
 }
 
 // This line exists to close the <p> tag from the opening in the line that defines the variable printQuote
-printQuote = printQuote + '</p>';
+message = message + `</p>`;
 
-document.getElementById('quote-box').innerHTML = printQuote;
+document.getElementById('quote-box').innerHTML = message;
 
-// Logging ranodom quote properties to console to verify that they work properly
-console.log(randomQuote.quote);
-console.log(randomQuote.soure);
-console.log(randomQuote.year);
+// Logging ranodom quote properties to console to verify that they work properly. Uncomment to test.
+//console.log(randomQuote.quote);
+//console.log(randomQuote.soure);
+//console.log(randomQuote.year);
 
-// Logging entire HTML string to console to verify that it works properly
-console.log(printQuote);
+// Logging entire HTML string to console to verify that it works properly. Uncomment to test.
+console.log(message);
 
-
+}
 
 /***
  * click event listener for the print quote button
