@@ -11,7 +11,7 @@ project 1 - A Random Quote Generator
  * `quotes` array 
 ***/
 
-// The quotes that will be used by the random quote geneartor are listed in this seciton. 
+// The quotes that will be used by the random quote geneartor are listed in this seciton.
 let quotes = [
   {quote: 'It does not do to dwell on dreams and forget to live', source: 'Albus Dumbledore', year: '', citation: ''},
   {quote: 'Fear of a name incrases fear of the thing itself', source: 'Albus Dumbledore', year: '', citation: ''},
