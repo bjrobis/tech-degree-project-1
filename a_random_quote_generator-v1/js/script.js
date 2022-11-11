@@ -42,7 +42,7 @@ function printQuote() {
 //  randomQuote variable uses the getRandomQuote function and assign it to the new variable. 
 // the printQuote variable takes the randomQuote variable and wraps it in the necesary HTML
 let randomQuote = getRandomQuote(quotes);
-let message = `<p class = 'quotes'> ${randomQuote.quote} </p> <p class = 'source'> ${randomQuote.source}`;
+let message = `<p class = 'quote'> ${randomQuote.quote} </p> <p class = 'source'> ${randomQuote.source}`;
 
 // these conditional statements were created to check for the year and citation properties, and if the object contains them it adds it to the printQuote variable 
 if (randomQuote.year !== "") {
